@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<script src="jquery.js"></script>
+<style type="text/css">
+.cl{
+	width:20px;
+	height: 20px;
+	background: black;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+</style>
+<body>
+	
+</body>
+<script type="text/javascript">
+
+//js中的 同步与异步
+
+function bian(i){
+	var t=Math.floor(Math.random()*$(window).height());
+	var l=Math.floor(Math.random()*$(window).width());
+	
+	var w=Math.floor(Math.random()*20+5);
+	
+	var r=Math.floor(Math.random()*255);
+	var g=Math.floor(Math.random()*255);
+	var b=Math.floor(Math.random()*255);
+	
+	var c='rgba('+r+','+g+','+b+',0.4)'
+	$('<div>').addClass('cl').css({background:c,height:w,width:w}).delay(i*5).animate({top:t,left:l}).appendTo('body')
+}
+	
+	
+	
+	for (var i=0;i<300;i++) {
+		bian(i);
+	}
+</script>
+</html>
